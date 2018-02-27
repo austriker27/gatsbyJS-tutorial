@@ -1,4 +1,4 @@
-module.exzports = {
+module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-typography`,
@@ -6,5 +6,5 @@ module.exzports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-  ]
-}
+  ],
+};
