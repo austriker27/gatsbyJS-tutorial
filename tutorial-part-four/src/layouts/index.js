@@ -3,11 +3,11 @@ import g from "glamorous";
 import { css } from "glamor";
 import Link from "gatsby-link";
 
-import { rhythm } from "../util/typography";
+import { rhythm } from "../utils/typography";
 
 const linkStyle = css({ float: `right` })
 
-export default ({ children }) => (
+export default ({ children, data }) => (
   <g.Div
     margin={`0 auto`}
     maxWidth={700}
@@ -20,7 +20,7 @@ export default ({ children }) => (
         display={`inline-block`}
         fontStyle={`normal`}
       >
-        Pandas Eating A lot
+        {data.site.siteMetadata.title}
       </g.H3>
     </Link>
     <Link className={linkStyle} to={`/about/`}>
@@ -29,3 +29,13 @@ export default ({ children }) => (
       {children()}
   </g.Div>
 );
+
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
