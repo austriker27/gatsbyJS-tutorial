@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Super pandas`
+    title: `Pandas Eating Lots`,
   },
   plugins: [
     {
@@ -9,13 +9,14 @@ module.exports = {
         name: `src`,
         path: `${__dirname}/src/`,
       },
-    }
-      `gatsby-plugin-glamor`,
-      {
-        resolve: `gatsby-plugin-typography`,
-        options: {
-          pathToConfigModule: `src/utils/typography.js`
-        },
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-glamor`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
   ],
 };
